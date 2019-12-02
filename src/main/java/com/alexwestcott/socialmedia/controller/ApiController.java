@@ -25,9 +25,9 @@ public class ApiController {
         Hooks.onOperatorDebug();
 
         return Flux.just(
-                new Image(1, "learning-spring-boot-cover.jpg"),
-                new Image(2, "learning-spring-boot-2nd-edition-cover.jpg"),
-                new Image(3, "bazinga.png")
+                new Image("1", "learning-spring-boot-cover.jpg"),
+                new Image("2", "learning-spring-boot-2nd-edition-cover.jpg"),
+                new Image("3", "bazinga.png")
         );
     }
 

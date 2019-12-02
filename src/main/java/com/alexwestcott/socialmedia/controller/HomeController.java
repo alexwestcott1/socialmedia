@@ -57,11 +57,6 @@ public class HomeController {
         return imageService.createImage(files)
                 .then(Mono.just("redirect:/"));
     }
-//
-//    @RequestMapping(path=BASE_URL, method=RequestMethod.POST)
-//    public Mono<String> uploadFile(@RequestPart Flux<FilePart> files){
-//        return imageService.createImage(files).then(Mono.just("redirect:/"));
-//    }
 
     @DeleteMapping(BASE_URL + "/" + FILENAME)
     public Mono<String> deleteFile(@PathVariable String filename){

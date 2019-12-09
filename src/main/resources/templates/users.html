@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Learning Spring Boot: Spring-a-Gram</title>
+    <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+
+<h1>Learning Spring Boot - 2nd Edition</h1>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th><th>Name</th><th>Join Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}" />
+            <td th:text="${user.username}" />
+            <td th:text="${user.joinDate}" />
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

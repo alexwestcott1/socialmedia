@@ -60,13 +60,6 @@ public class ImageService {
         );
     }
 
-//    public Mono<Void> createImage(Flux<FilePart> files) {
-//        return files
-//                .flatMap(file -> file.transferTo(
-//                        Paths.get(UPLOAD_ROOT, file.filename()).toFile()))
-//                .then();
-//    }
-
     public Mono<Void> deleteImage(String imageName){
 
         Mono<Void> deleteDatabaseImage = imageRepository.findByName(imageName).flatMap(imageRepository::delete).log("Delete image - database");

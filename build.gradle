@@ -27,6 +27,7 @@ dependencies {
 	compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
 	testCompile('io.projectreactor:reactor-test')
 	testCompile("org.seleniumhq.selenium:selenium-java")
+	compile("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

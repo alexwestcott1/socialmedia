@@ -4,6 +4,7 @@
       docker:
         - image: circleci/openjdk:11.0.3-jdk-stretch
         - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+        - image: circleci/mongo:latest
       environment:
         JVM_OPTS: -Xmx3200m
       steps:

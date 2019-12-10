@@ -11,3 +11,10 @@
         - checkout # check out the code in the project directory
         - run: echo "hello world" # run the `echo` command
         - run: ./gradlew clean build
+        - run:
+          name: Download Selenium
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+        - run:
+          name: Start Selenium
+          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true

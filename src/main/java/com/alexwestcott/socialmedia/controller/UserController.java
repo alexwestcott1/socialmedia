@@ -5,9 +5,7 @@ import com.alexwestcott.socialmedia.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -35,7 +33,12 @@ public class UserController {
 
     @DeleteMapping("/users/{username}")
     public Mono<String> deleteUser(@PathVariable("username") String username){
-        return userService.deleteUser(username).then(Mono.just("redirect:/"));
+        return userService.deleteUser(username).then(Mono.just("redirect:/users"));
+    }
+
+    @PostMapping("/users")
+    public Mono<String> createUser(@RequestBody User user){
+        return userService.createUser(user).then(Mono.just("redirect:/users"));
     }
 
 }

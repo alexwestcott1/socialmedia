@@ -1,19 +1,17 @@
 package com.alexwestcott.socialmedia.controller;
 
-import java.io.IOException;
-
 import com.alexwestcott.socialmedia.service.ImageService;
-import org.springframework.http.codec.multipart.Part;
-import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.io.IOException;
 
 @Controller
 public class HomeController {

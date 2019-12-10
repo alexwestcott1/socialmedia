@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @Document
 public class User {
-    @Id private final String id;
+    @Id private String id;
     private final String username;
     private final LocalDate joinDate;
 

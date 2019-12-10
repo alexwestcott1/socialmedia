@@ -5,16 +5,10 @@
         - image: circleci/openjdk:11.0.3-jdk-stretch
         - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
         - image: circleci/mongo:latest
+        - image: selenium/standalone-chrome:3.1.0
       environment:
         JVM_OPTS: -Xmx3200m
       steps:
         - checkout # check out the code in the project directory
         - run: echo "hello world" # run the `echo` command
         - run: ./gradlew clean build
-        - run:
-          name: Download Selenium
-          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
-        - run:
-          name: Start Selenium
-          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
-          background: true
